@@ -1,0 +1,44 @@
+<!--Take note of the ejs syntax-->
+<!--The javascript should be between <% %> signs-->
+<!--I'd compare it to python where we use angular brackets, though for javascript is a little uglier lmao-->
+<!--first we use an if statement to check the errors-->
+<!--if there is an error, we will want to display it-->
+
+
+ <% if( typeof errors != 'undefined') { %> <!--That means that there is an error-->
+    <!--because errors is an array, we will loop through it with foreach-->
+    <% errors.forEach(function(error) { %>
+     <!--to output with ejs we use the equal (=) sign, the rest are % -->
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= error.msg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <%});%> 
+ <% } %>    
+ 
+ <!--I have just copied and pasted the above div and change alert-warning to be alert-success, the message will be green-->
+ <!--Success Message-->
+ <% if(success_msg != '') { %> <!--if the success message is not empty, we display it-->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= success_msg %> <!--add the success_msg variable-->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+ <% } %>
+ 
+<!--Error Message-->
+<!--change the alert-success to alert-warning-->
+ <% if(error_msg != '') { %> <!--if the error message is not empty, we display it-->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= error_msg %> <!--add the success_msg variable-->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+ <% } %>
+
+ <!--Error Message for login-->
+<!--change the alert-success to alert-warning-->
+<% if(error != '') { %> <!--if the error message is not empty, we display it-->
+   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+       <%= error %> <!--add the success_msg variable-->
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
+<% } %>
