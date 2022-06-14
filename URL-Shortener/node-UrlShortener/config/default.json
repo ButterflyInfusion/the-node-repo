@@ -1,0 +1,5 @@
+{
+    "mongoURI" : "mongodb+srv://admin:22319989657@cluster0.egnle.mongodb.net/url?retryWrites=true&w=majority",
+
+    "baseUrl" : "http://localhost:5000"
+}
